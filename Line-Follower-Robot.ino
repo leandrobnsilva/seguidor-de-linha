@@ -1,5 +1,7 @@
-// Configurações
+// Configurações de linha
 int preto = 300;
+
+// Configurações de velocidade
 int velocidade_reta = 150;
 int velocidade_curva1 = 170;
 int velocidade_curva2 = 190;
@@ -61,9 +63,10 @@ void loop() {
 
 bool sensor(int pin) {
   if (analogRead(pin) > preto) {
-    return 1;
+    return true;
+  } else {
+    return false;
   }
-  return 0;
 }
 
 void MotorA(int velocidade, int sentido) {
